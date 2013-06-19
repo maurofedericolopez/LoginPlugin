@@ -76,8 +76,8 @@
 
 				#page-body h1 {
 					margin-top: 0;
-				}
-			}
+                                }
+                                }
 		</style>
 	</head>
 	<body>
@@ -87,7 +87,7 @@
                         <ul>
 				<li class="controller"><g:link controller="usuario"  action="create" >Crear nuevo usuario</g:link></li>
 
-                                <li class="controller"><g:link controller="usuario"  action="list" >Lista de usuarios</g:link></li>
+                                <li class="controller"><g:link controller="usuario" >Lista de usuarios</g:link></li>
 
                         </ul>
 

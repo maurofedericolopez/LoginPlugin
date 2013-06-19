@@ -10,9 +10,8 @@ class UsuarioController {
         redirect(action: "list", params: params)
     }
 
-    def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        [usuarioInstanceList: Usuario.list(params), usuarioInstanceTotal: Usuario.count()]
+    def list() {
+        [usuarioInstanceList: Usuario.list(), usuarioInstanceTotal: Usuario.count()]
     }
 
     def create() {
@@ -21,7 +20,7 @@ class UsuarioController {
 
     def save() {
         def usuarioInstance = new Usuario(params)
-        if (!usuarioInstance.save()) {
+        if (!usuarioInstance.save(flush: true)) {
             render(view: "create", model: [usuarioInstance: usuarioInstance])
             return
         }
